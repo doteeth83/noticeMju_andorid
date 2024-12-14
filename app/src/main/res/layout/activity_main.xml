@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="0dp"
+    android:background="#F2F4F6">
+    <!-- 네비게이션 바 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:layout_marginBottom="100px">
+
+        <!-- 로고 -->
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/logo" />
+
+        <!-- 검색 바와 공지사항 등록 버튼 그룹 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="horizontal"
+            android:layout_marginLeft="110dp">
+
+            <!-- 검색 바 -->
+            <!-- 공지사항 등록 버튼 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/search_background"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_search" />
+
+                <EditText
+                    android:id="@+id/search_box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:background="@null"
+                    android:hint="대학/학과명을 검색해보세요"
+                    android:padding="0dp"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_register_notice"
+            android:layout_width="80dp"
+            android:layout_height="36dp"
+            android:background="@drawable/button_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="0dp"
+            android:stateListAnimator="@null"
+            android:text="공지사항 등록"
+            android:textColor="#002E66"
+            android:textSize="26px" />
+
+
+    </LinearLayout>
+
+    <!-- 배너 섹션 -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/banner_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="141dp"
+        android:layout_marginBottom="8dp" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="18dp"
+        app:tabIndicatorColor="#B2B2B2"
+        android:background="#F2F4F6" />
+
+    <!--대학/학과명 필터-->
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="72dp"
+        android:fillViewport="true"
+        android:paddingLeft="16dp"
+        android:paddingTop="20dp"
+        android:paddingRight="16dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/univ_filter_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15px"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="0dp">
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingTop="20dp" />
+
+    <!-- 페이지네이션 버튼 섹션 -->
+    <LinearLayout
+        android:id="@+id/pagination_layout"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+    </LinearLayout>
+
+</LinearLayout>
